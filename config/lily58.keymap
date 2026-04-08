@@ -50,7 +50,17 @@
 &kp TAB           &kp Q            &kp W            &kp E              &kp R                &kp T                        &kp Y       &kp U         &kp I                 &kp O             &kp P                &kp EQUAL
 &kp LSHIFT        &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_SHIFT D  &HML LEFT_CONTROL F  &kp G                        &kp H       &HMR RCTRL J  &HMR RIGHT_SHIFT K    &HMR RIGHT_ALT L  &HMR RIGHT_GUI SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z            &kp X            &kp C              &kp V                &kp B        &none    &none  &kp N       &kp M         &kp COMMA             &kp DOT           &kp FSLH             &kp LEFT_GUI
-                                                    &mt LALT LA(TAB)   &kp SPACE            &lt 1 ENTER  &none    &none  &lt 2 CAPS  &kp BSPC      &mt RIGHT_ALT DELETE
+                                                    &mt LALT LA(TAB)   &kp SPACE            &lt 2 ENTER  &none    &none  &lt 3 CAPS  &kp BSPC      &mt RIGHT_ALT DELETE
+            >;
+        };
+
+        nonHRM {
+            bindings = <
+&kp ESC    &kp N1  &kp N2  &kp N3            &kp N4     &kp N5                         &kp N6      &kp N7    &kp N8                &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E             &kp R      &kp T                          &kp Y       &kp U     &kp I                 &kp O    &kp P     &kp EQUAL
+&kp LSHFT  &kp A   &kp S   &kp D             &kp F      &kp G                          &kp H       &kp J     &kp K                 &kp L    &kp SEMI  &kp APOS
+&kp LCTRL  &kp Z   &kp X   &kp C             &kp V      &kp B        &trans    &trans  &kp N       &kp M     &kp COMMA             &kp DOT  &kp FSLH  &kp LGUI
+                           &mt LALT LA(TAB)  &kp SPACE  &lt 2 ENTER  &trans    &trans  &lt 3 CAPS  &kp BSPC  &mt RIGHT_ALT DELETE
             >;
         };
 
@@ -85,7 +95,7 @@
 &trans       &trans                  &trans                &trans            &trans             &trans                    &kp KP_NUMLOCK  &kp FSLH  &kp ASTERISK  &kp MINUS     &kp C_BRI_UP  &kp C_BRI_DN
 &kp LG(TAB)  &trans                  &trans                &trans            &trans             &trans                    &kp N7          &kp N8    &kp N9        &kp PLUS      &trans        &trans
 &trans       &kp LG(LA(LEFT_ARROW))  &kp LG(LA(UP_ARROW))  &kp LG(LA(DOWN))  &kp LG(LA(RIGHT))  &trans                    &kp N4          &kp N5    &kp N6        &kp PLUS      &trans        &trans
-&trans       &trans                  &trans                &trans            &trans             &trans  &trans    &trans  &kp N1          &kp N2    &kp N3        &kp KP_ENTER  &trans        &tog 4
+&trans       &trans                  &trans                &trans            &trans             &trans  &trans    &trans  &kp N1          &kp N2    &kp N3        &kp KP_ENTER  &trans        &tog 1
                                                            &trans            &trans             &trans  &trans    &trans  &trans          &kp N0    &kp DOT
             >;
         };
@@ -99,24 +109,14 @@
                                                           &trans            &trans             &trans        &trans    &trans  &trans           &trans      &kp LG(LS(ESCAPE))
             >;
         };
-
-        nonHRM {
-            bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3            &kp N4     &kp N5                         &kp N6      &kp N7    &kp N8                &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W   &kp E             &kp R      &kp T                          &kp Y       &kp U     &kp I                 &kp O    &kp P     &kp EQUAL
-&kp LSHFT  &kp A   &kp S   &kp D             &kp F      &kp G                          &kp H       &kp J     &kp K                 &kp L    &kp SEMI  &kp APOS
-&kp LCTRL  &kp Z   &kp X   &kp C             &kp V      &kp B        &trans    &trans  &kp N       &kp M     &kp COMMA             &kp DOT  &kp FSLH  &kp LGUI
-                           &mt LALT LA(TAB)  &kp SPACE  &lt 1 ENTER  &trans    &trans  &lt 2 CAPS  &kp BSPC  &mt RIGHT_ALT DELETE
-            >;
-        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         layer3 {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 };
